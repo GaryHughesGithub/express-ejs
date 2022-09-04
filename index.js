@@ -3,9 +3,7 @@ const app = express();
 const path = require('path');
 const redditData = require('./data.json');
 
-app.use(express.static(path.join(__dirname, 'public'))); //directory to group file css/js/imgs etc
-                                   // this can be seperated out into seperate directories
-
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('view engine', 'ejs');
 app.set('views',path.join(__dirname, '/views'));
@@ -48,7 +46,7 @@ app.get('/cats', (req, res) => {
 
 
 app.get('/', (req, res) => {
-  res.send('Sorry no path was chosen!')
+  res.send('THIS IS YOUR HOME PAGE, WELCOME!')
 })
 
 app.listen(3000, function () {
